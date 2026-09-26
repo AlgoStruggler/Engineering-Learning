@@ -1,0 +1,116 @@
+/* 重置默认样式，让计算更可控 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 让内容在屏幕中垂直水平居中 */
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;          /* 占满整个视口高度 */
+  display: flex;              /* 用 flex 居中 */
+  align-items: center;        /* 垂直居中 */
+  justify-content: center;    /* 水平居中 */
+  padding: 20px;
+}
+
+/* 表单卡片 */
+.login-form {
+  background: #fff;
+  width: 400px;               /* 大于 768px 时固定 400px */
+  max-width: 100%;            /* 小于 768px 时占满可用宽度 */
+  padding: 40px 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 标题 */
+.login-form h1 {
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* 每个输入项的分组 */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* label 样式 */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* 输入框样式 */
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* 输入框获得焦点时高亮 */
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* 记住我这一行：复选框和文字横向排列 */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;           /* 覆盖上面的 margin */
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* 按钮样式 */
+button {
+  width: 100%;
+  padding: 13px;
+  background: #667eea;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+/* 按钮 hover 变化 */
+button:hover {
+  background: #5568d3;
+}
+
+/* 按钮按下时的反馈 */
+button:active {
+  transform: scale(0.98);
+}
+
+/* 响应式：小于 768px 时 */
+@media (max-width: 768px) {
+  .login-form {
+    width: 100%;              /* 占满宽度 */
+    padding: 28px 20px;
+  }
+}
